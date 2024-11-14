@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torisoftt Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(45deg, #000000, #ff0000);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile h1 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .social-link {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 15px 20px;
+            border-radius: 12px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .link-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .link-card i {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .link-card:hover i {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .whatsapp-btn i {
+            font-size: 24px;
+        }
+
+        .whatsapp-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .visit-website {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .visit-website a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .visit-website a:hover {
+            opacity: 1;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .profile h1 {
+                font-size: 22px;
+            }
+
+            .link-card {
+                padding: 14px 18px;
+            }
+
+            .whatsapp-btn {
+                padding: 14px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="./favicon.png" alt="Torisoftt Logo">
+            <h1>Torisoftt</h1>
+            <p>Soluciones digitales para tu negocio</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/torisoftt/" class="social-link" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://x.com/Torisoftt" class="social-link" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://github.com/roggrt" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/torisoftt/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="https://torisoftt.com/services/wordpress" class="link-card">
+                WordPress Development
+                <i class="fab fa-wordpress"></i>
+            </a>
+            <a href="https://torisoftt.com/services/uiux-design" class="link-card">
+                UI/UX Design
+                <i class="fas fa-paint-brush"></i>
+            </a>
+            <a href="https://torisoftt.com/services/seo-y-posicionamiento" class="link-card">
+                SEO y Posicionamiento
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="https://torisoftt.com/services/frontend-development" class="link-card">
+                Frontend Development
+                <i class="fas fa-code"></i>
+            </a>
+            <a href="https://torisoftt.com/services/backend-development" class="link-card">
+                Backend Development
+                <i class="fas fa-server"></i>
+            </a>
+            <a href="https://wa.me/593978698025" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Escríbenos ahora
+            </a>
+        </div>
+
+        <div class="visit-website">
+            <a target="_blank" href="https://torisoftt.com">
+                Visítanos
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
