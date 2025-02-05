@@ -133,8 +133,94 @@
             transform: scale(1.1);
         }
 
-        .whatsapp-btn {
+        .promo-section {
+            margin-bottom: 15px;
+        }
+
+        .promo-card {
+            cursor: pointer;
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .promo-card i {
+            transition: transform 0.3s ease;
+        }
+
+        .promo-card.active i {
+            transform: rotate(180deg);
+        }
+
+        .promo-content {
             background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .promo-content.active {
+            display: block;
+        }
+
+        .promo-content h3 {
+            color: white;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .promo-content ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .promo-content ul li {
+            color: white;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .promo-content ul li:before {
+            content: "✓";
+            margin-right: 10px;
+            color: #4CAF50;
+        }
+
+        .promo-btn {
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+
+        .promo-btn:hover {
+            background: #22c35e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-btn {
+            background: rgba(37, 211, 102, 0.9);
             backdrop-filter: blur(10px);
             color: white;
             text-decoration: none;
@@ -156,7 +242,7 @@
         }
 
         .whatsapp-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(37, 211, 102, 1);
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
@@ -193,7 +279,7 @@
                 font-size: 22px;
             }
 
-            .link-card {
+            .link-card, .promo-card {
                 padding: 14px 18px;
             }
 
@@ -208,7 +294,7 @@
         <div class="profile">
             <img src="./favicon.png" alt="Torisoftt Logo">
             <h1>Torisoftt</h1>
-            <p>Soluciones digitales para tu negocio</p>
+            <p>Soluciones digitales y páginas web para tu negocio</p>
             <div class="social-links">
                 <a href="https://www.facebook.com/torisoftt/" class="social-link" target="_blank">
                     <i class="fab fa-facebook-f"></i>
@@ -226,9 +312,29 @@
         </div>
 
         <div class="links">
+            <div class="promo-section">
+                <div class="promo-card" onclick="togglePromo()">
+                    <span>🔥 Tu sitio web por solo $150</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="promo-content">
+                    <h3>Tu sitio web por solo $150</h3>
+                    <ul>
+                        <li>Diseño Profesional y Responsive</li>
+                        <li>Dominio + Hosting 1 año GRATIS</li>
+                        <li>Entrega en 5 días</li>
+                        <li>SSL Gratuito</li>
+                        <li>Optimización SEO básica</li>
+                    </ul>
+                    <a href="https://wa.me/593978698025?text=¡Hola!%20Me%20interesa%20la%20promo%20de%20página%20web%20por%20$150.%20¿Me%20pueden%20dar%20más%20información?" class="promo-btn">
+                        <i class="fab fa-whatsapp"></i> ¡Cotiza Ya!
+                    </a>
+                </div>
+            </div>
+
             <a href="https://torisoftt.com/paginas-web-ecuador" class="link-card">
-                WordPress Development
-                <i class="fab fa-wordpress"></i>
+                Páginas Web
+                <i class="fas fa-globe"></i>
             </a>
             <a href="https://torisoftt.com/services/uiux-design" class="link-card">
                 UI/UX Design
@@ -246,10 +352,11 @@
                 Backend Development
                 <i class="fas fa-server"></i>
             </a>
-            <a href="https://wa.me/593978698025" class="whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> Escríbenos ahora
-            </a>
         </div>
+
+        <a href="https://wa.me/593978698025" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> Escríbenos ahora
+        </a>
 
         <div class="visit-website">
             <a target="_blank" href="https://torisoftt.com">
@@ -258,5 +365,14 @@
             </a>
         </div>
     </div>
+
+    <script>
+        function togglePromo() {
+            const promoCard = document.querySelector('.promo-card');
+            const promoContent = document.querySelector('.promo-content');
+            promoCard.classList.toggle('active');
+            promoContent.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
